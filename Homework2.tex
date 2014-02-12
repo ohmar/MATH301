@@ -64,6 +64,7 @@ If $x = -1$, \\
 	
 	$x^2 - x - 2 = (-1)^2 - (-1) - 2 = 0.$ \\\\
 Therefore, $x^2 - x - 2 = 0 \leftrightarrow x = 2$ or $x = -1$.\\
+\\
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 9
@@ -73,6 +74,7 @@ Suppose for contradiction that there is a largest integer. Let this integer be \
 \\
 -- \\ 
 Suppose for contradiction that there is a largest integer. Let this integer be \textit{n}. Notice, $0 < 1 \rightarrow n + 1$. Therefore, $n$, is not the largest integer, since for all $n$, $n + 1 > n$.\\
+\\
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 10
@@ -86,6 +88,7 @@ What does this argument prove?
 \\
 --\\
 The initial statement in this proof is false, which we showed in Problem 9. The conclusion is also false since 1 is not the largest integer. This argument tries to prove that if a largest integer existed, that integer would be 1.\\
+\\
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 11
@@ -93,6 +96,8 @@ The initial statement in this proof is false, which we showed in Problem 9. The 
 \textbf{11.} Prove by contradiction that there does not exist a smallest positive real number.
 \\
 --\\
+Suppose for contradiction that there exists a smallest positive real number, $n$. Notice that $ 0 < \frac{1}{2} \rightarrow 0 < \frac{1}{2}n < n.$ So, the integer $\frac{1}{2}n,$ is real and less than $n$. That is a contradiction. Therefore, the original statement holds.\\
+\\
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 12
@@ -100,6 +105,24 @@ The initial statement in this proof is false, which we showed in Problem 9. The 
 \textbf{12.} Prove by induction on \textit{n} that, for all positive integers n, 3 divides $4^n + 5$.
 \\
 --\\
+I) Base Step:\\
+For $n = 1, 4^n + 5 = 4^1 + 5 = 9$ which is indeed divisible by 3. \\
+
+II) Inductive Step: Suppose for some positive $k$, $P(k) \Rightarrow P(k+1)$.\\
+$P(k): 4^k + 5 = 3q.$\\
+$P(k+1): 4^{k+1} + 5 = 3q.$\\
+
+Considering $P(k+1):$
+\begin{align*}
+	4^{k+1} + 5 &= 4 \cdot 4^k + 5\\
+	&= 4(3q - 5) + 5, \text{ by our inductive hypothesis.}\\
+	&= 12q - 15 \\
+	&= 3(4q - 5) \\
+	&= 3p, \text{ where \textit{p} is an integer.}\\
+	& \text{Thus, 3 divides } 4^{k+1} + 5.
+\end{align*}
+Finally, by induction on $n$, 3 divides $4^n + 5$ for all positive integers $n$.\\
+\\
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 13
@@ -107,6 +130,21 @@ The initial statement in this proof is false, which we showed in Problem 9. The 
 \textbf{13.} Prove by induction on \textit{n} that $n! > 2^n$ for all integers $n$ such that $n \ge 4$.
 \\
 --\\
+I) Base Step: $P(4) = 4! > 2^4 = 24 > 16.$\\
+Clearly, base case holds. \\
 
+II) Inductive step: Suppose for some positive $k \ge 4$, $P(k) \Rightarrow P(k+1)$ \\
+$P(k): k! > 2^k$ \\
+$P(k+1): (k+1)! > 2^{k+1}$ \\
+Considering $P(k+1):$
+\begin{align*}
+	2k! &> 2 \cdot 2^k \\
+	&> 2^{k+1}, \text{ by our inductice hypothesis.}\\
+	\\
+	(k+1)! &= (k+1)k! \\
+	(k+1)k! &\ge (4+1)k!, \text{ because k >= 4}\\ 
+	&= 5k! > 2k! > 2 \cdot 2^k = 2^{k+1} \\
+\end{align*}
+Finally, by induction on $n$, $n! > 2^n$ for all integers greater than or equal to 4.
 
 \end{document}
