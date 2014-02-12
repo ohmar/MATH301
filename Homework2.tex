@@ -14,6 +14,7 @@
 \renewcommand{\headrulewidth}{0pt} % Remove header underlines
 \renewcommand{\footrulewidth}{0pt} % Remove footer underlines
 \setlength{\headheight}{13.6pt} % Customize the height of the header
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
@@ -44,14 +45,34 @@
 (i) $x^2 - x - 2 = o \Leftrightarrow x = -1$ or $x = 2$.\\
 (ii) $x^2 - x - 2 > 0 \Leftrightarrow x < -1$ or $x > 2$.
 \\
+-- \\
+Proving $\rightarrow$: \\
+\begin{align*}
+	x^2 - x - 2 = 0 &\rightarrow (x-2)(x+1) = 0. \\
+	&\rightarrow (x-2) = 0 \text{ or } (x+1) = 0. \\
+	&\rightarrow x = 2 \text{ or } x = -1. \\
+\end{align*}
+
+So, $x^2 - x - 2 = 0 \rightarrow x = 2 or x = -1.$ \\\\
+Proving $\leftarrow$: \\
+
+If $x = 2$, \\
+	
+	$x^2 - x - 2 = 2^2 - 2 - 2 = 0.$ \\
+	
+If $x = -1$, \\
+	
+	$x^2 - x - 2 = (-1)^2 - (-1) - 2 = 0.$ \\\\
+Therefore, $x^2 - x - 2 = 0 \leftrightarrow x = 2$ or $x = -1$.\\
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 9
 %----------------------------------------------------------------------------------------
-\textbf{9.}	Prove by contradiction that there does not exist a largest integer. [Hint: Observe that for any integer \textit{n} there is a greater one, say \textit{n} + 1. So begin your proof  \\
-
+\textbf{9.}	Prove by contradiction that there does not exist a largest integer. [Hint: Observe that for any integer \textit{n} there is a greater one, say \textit{n} + 1. So begin your proof:  
 Suppose for contradiction that there is a largest integer. Let this integer be \textit{n}.$ \cdot$]
 \\
+-- \\ 
+Suppose for contradiction that there is a largest integer. Let this integer be \textit{n}. Notice, $0 < 1 \rightarrow n + 1$. Therefore, $n$, is not the largest integer, since for all $n$, $n + 1 > n$.\\
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 10
@@ -63,24 +84,29 @@ Let \textit{n} be the largest integer. Then, since 1 is an integer we must have 
 
 What does this argument prove?
 \\
+--\\
+The initial statement in this proof is false, which we showed in Problem 9. The conclusion is also false since 1 is not the largest integer. This argument tries to prove that if a largest integer existed, that integer would be 1.\\
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 11
 %----------------------------------------------------------------------------------------
 \textbf{11.} Prove by contradiction that there does not exist a smallest positive real number.
 \\
+--\\
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 12
 %----------------------------------------------------------------------------------------
 \textbf{12.} Prove by induction on \textit{n} that, for all positive integers n, 3 divides $4^n + 5$.
 \\
+--\\
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 13
 %----------------------------------------------------------------------------------------
 \textbf{13.} Prove by induction on \textit{n} that $n! > 2^n$ for all integers $n$ such that $n \ge 4$.
 \\
+--\\
 
 
 \end{document}
