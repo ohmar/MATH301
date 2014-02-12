@@ -1,0 +1,86 @@
+\documentclass[paper=letter, fontsize=11pt]{scrartcl} % Letter paper and 11pt font size
+
+\usepackage{amstext, amsmath, amssymb}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{San Francisco State University} \\ [25pt]
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge MATH 301 Assignment 2  \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Omar Sandoval}
+
+\date{\normalsize\today}
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 8
+%----------------------------------------------------------------------------------------
+\textbf{8.} Prove the following statements concerning a real number \textit{x}. \\
+(i) $x^2 - x - 2 = o \Leftrightarrow x = -1$ or $x = 2$.\\
+(ii) $x^2 - x - 2 > 0 \Leftrightarrow x < -1$ or $x > 2$.
+\\
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 9
+%----------------------------------------------------------------------------------------
+\textbf{9.}	Prove by contradiction that there does not exist a largest integer. [Hint: Observe that for any integer \textit{n} there is a greater one, say \textit{n} + 1. So begin your proof  \\
+
+Suppose for contradiction that there is a largest integer. Let this integer be \textit{n}.$ \cdot$]
+\\
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 10
+%----------------------------------------------------------------------------------------
+\textbf{10.} What is wrong with the following proof that 1 is the largest integer? \\
+
+Let \textit{n} be the largest integer. Then, since 1 is an integer we must have $1 \le n$. On the other hand, since $n^2$ is also an integer we must have $n^2 \le n$ from which it follow that $n \le 1$. Thus, since $1 \le n$ and $n \le 1$ we must have $n = 1$. Thus 1 is that largest integer as claimed.
+\\
+
+What does this argument prove?
+\\
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 11
+%----------------------------------------------------------------------------------------
+\textbf{11.} Prove by contradiction that there does not exist a smallest positive real number.
+\\
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 12
+%----------------------------------------------------------------------------------------
+\textbf{12.} Prove by induction on \textit{n} that, for all positive integers n, 3 divides $4^n + 5$.
+\\
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 13
+%----------------------------------------------------------------------------------------
+\textbf{13.} Prove by induction on \textit{n} that $n! > 2^n$ for all integers $n$ such that $n \ge 4$.
+\\
+
+
+\end{document}
