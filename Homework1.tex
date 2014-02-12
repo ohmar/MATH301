@@ -1,0 +1,171 @@
+\documentclass[paper=letter, fontsize=11pt]{scrartcl} % Letter paper and 11pt font size
+
+\usepackage{amstext, amsmath, amssymb}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{San Francisco State University} \\ [25pt]
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge MATH 301 Assignment 1  \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Omar Sandoval}
+
+\date{\normalsize\today}
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\textbf{1.} By using truth tables prove that, for all statements $P$ and $Q$, the statement (\textit{P} $\Rightarrow$ \textit{Q}) and it's contrapositive $(\neg Q \Rightarrow \neg P)$ are equivalent. In Example 1.2.3 identify which statement is the contrapositive of statement (i) $(f(a)=0 \Rightarrow a >0)$. Find another pair of statements in that list which are contrapositives of each other.
+\\\\
+\begin{tabular} {| l | c | r | l | c | r |}
+	\hline
+	P & Q & P $\Rightarrow$ Q & $\neg$P & $\neg$Q & $\neg$Q $\Rightarrow$ $\neg$P \\ \hline
+	T & T & T & F & F & T \\ \hline
+	T & F & F & F & T & F \\ \hline
+	F & T & T & T & F & T \\ \hline
+	F & F & T & T & T & T \\ \hline
+\end{tabular}
+\\\\\\
+The converse of (i) $(f(a)=0 \Rightarrow a > 0)$ is $(a >0 \Rightarrow f(a)=0)$.\\
+The contrapositive is (vii) For real numbers \textit{a}, if \textit{a} is non-positive then $f(a)\not= 0$. 
+\\\\
+The statement (iii) If $f(a) = 0$ then $a$ is non-positive, has a contrapositve, (vi) If $a$ is positive then $f(a) \not= 0$.
+\\
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\textbf{2.} By using truth tables prove that, for all statements $P$ and $Q$ , the three statements (i)  $P \implies Q$ (ii) $(P$ or $Q )$ $\leftrightarrow Q$ and (iii) $( P$ and $Q )$ $\leftrightarrow P$ are equivalent.
+
+\begin{tabular} {| l | c | r | l | c | r | l |}
+	\hline
+	P & Q & P or Q & P and Q & P $\implies$ Q & (P or Q) $\leftrightarrow$ Q & (P and Q) $\leftrightarrow$ Q\\ \hline
+	T & T & T & T & T & T & T\\ \hline
+	T & F & T & F & F & F & F\\ \hline
+	F & T & T & F & T & T & T\\ \hline
+	F & F & T & F & T & T & T\\ \hline
+\end{tabular}
+\\\\
+%----------------------------------------------------------------------------------------
+%	PROBLEM 4
+%----------------------------------------------------------------------------------------
+
+\textbf{4.} Prove the following statements concerning positive integers a, b and c.
+\\\\
+(i) ( $a$ divides $b$ ) and ( $a$ divides $c$ ) $\implies$ $a$ divides ( $b$ + $c$ ).
+
+$a$ divides $b$ means, for some integer $q$, $b=aq$.\\
+$a$ divides $c$ means, for some integer $p$, $c=ap$.\\
+So, $b + c = aq + ap = a(q + p) = ak$, where $k = q + p$ for some integer.\\
+Therefore, $a$ divides $b + c$.\\
+
+(ii) ( $a$ divides $b$ ) or ( $a$ divides $c$) $\implies$ $a$ divides $bc$.\\
+
+Proof by Cases \\
+Case 1: $a | b$ means $b = aq$ for some integer $q$.\\
+So, $bc = (aq)c = a(qc) = ar$, where $r = qc$ is an integer.\\
+Therefore, $a | bc$.\\
+
+Case 2: $a | c$ means $c = ap$ for some integer $p$.\\
+So, $bc = b(ap) = a(bp) = as$, where $s = bp$ is an integer.\\
+Therefore, $a | bc$.\\
+
+Clearly, $a | bc$.\\\\
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 5
+%----------------------------------------------------------------------------------------
+
+\textbf{5.} Which of the following conditions are necessary for the positive integer $n$ to be divisible by 6 (proofs not necessary)?\\
+(i) 3 divides n.\\
+(ii) 9 divides n.\\
+(iii) 12 divides n.\\
+(iv) n = 12.\\
+(v) 6 divides  $n^2$ .\\
+(vi) 2 divides n and 3 divides n.\\
+(vii) 2 divides n or 3 divides n.\\
+
+Which of these conditions are sufficient?\\
+
+When 6 divides $n$, for some integer $q$, $n=6q$.\\
+The conditions (i), (v), (vi) and (vii) are \textit{necessary} for positive integer $n$ to be divisible by 6.\\
+
+The conditions (iii), (iv), (v), and (vi) are \textit{sufficient} for positive integer $n$ to be divisible by 6.\\
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 6
+%----------------------------------------------------------------------------------------
+\textbf{6.} User the properties of addition and multiplication of real numbers given in Properties 2.3.1 to deduce that, for all real numbers $a$ and $b$.\\
+
+(i) $a \times 0 = 0 = 0 \times a$.
+
+Proof\\
+$0 + 0 = 0$	$\hspace{1 in}$ Additive Identity.\\
+$(0 \times a) + (0 \times a) = (0 \times a)$  Distributive property.\\
+$0 \times a = 0$ $\hspace{1 in}$ Additive inverse.\\
+$a \times 0 = 0$ $\hspace{1 in}$ Commutative property.\\
+Therefore, $ a \times 0 = 0 = 0 \times a$.\\
+
+(ii) $(-a)b = -ab = a(-b)$.\\
+
+We first need to prove that $-a = (-1)a$.
+\begin{align*}
+	a + (-1)a &= 1a + (-1)a &\text{Multiplicative iden.}\\
+	&= (1 + (-1))a &\text{Distributive prop.}\\
+	&= 0a \\
+	&= 0
+\end{align*}
+So, $a + (-1)a = 0 \rightarrow -a = (-1)a$.\\
+\begin{align*}
+	-ab &= (-1)ab \\
+	&= ((-1)a)b &\text{Associative}\\
+	&= (-a)b\\
+	-ab &= (-1)ab\\
+	&= ((-1)b)a &\text{Associative}\\
+	&=(-b)a\\
+	&= a(-b) &\text{Commutative}
+\end{align*}
+Therefore, $(-a)b  = -ab = a(-b)$.\\
+
+(iii) $(-a)(-b) = ab$.\\
+\begin{align*}
+	-a = (-1)a \\
+	-b = (-1)b \\
+	a &= -(-a) &\text{Additive Iden.}\\
+	ab &= -(-a)b \\
+	&= -(-ab) \\
+	&= -((-a)b) \\
+	&=-(b(-a)) \\
+	&=(-b)(-a) &\text{Commutative prop.}
+\end{align*}
+Therefore, $(-a)(-b) = ab$.
+
+
+\end{document}
