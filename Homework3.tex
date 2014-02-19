@@ -45,11 +45,62 @@
 	(1+x)^n \ge 1 + nx
 \end{align*}
 for all non-negative integers n and real numbers $x > -1$. \\
+--\\
+Proof by Induction\\
+I) Base Case \\
+\begin{align*}
+	\text{For } n &= 0, \\
+	(1 + x)^0 &\ge 1 + 0 \cdot x \\
+	1 &\ge 1 \\
+	&\text{Thus, base case holds.} 
+\end{align*}
 
+II) Inductive Step \\
+Suppose for all non-negative integer \textit{k} and real number $x > -1$, $P(k) \Rightarrow P(k+1).$ \\
+$P(k): (1 + x)^k \ge 1 + kx.$ \\
+$P(k+1): (1 + x)^{k+1} \ge 1 + (k + 1)x.$ \\
+
+Consider $P(k+1)$: \\
+NTS: $(1 + x)^{k+1} \ge 1 + (k + 1)x.$. \\
+Notice $x > -1 = 1 + x > 0$ \\
+Also, $k \ge 0$ and $x^2 \ge 0$ $\rightarrow$ $xk^2 \ge 0$. \\
+By the inductive definition, $(1 + x)^{k+1} = (1 + x)(1 + x)^k.$ \\
+By the inductive hypothesis, $(1 + x)^{k+1} \ge 1 + kx \rightarrow (1 + x)(1 + x)^k.$ \\
+$ = (1 + x)^{k+1} \ge (1 + kx)(1 + x)$ \\
+$ = 1 + x + kx + kx^2$ \\
+$ = 1 + (k + 1)x + kx^2 \ge 1 + (k + 1)x + 0$ \\
+$ = 1 + (k + 1)x$, since $kx^2 \ge 0$.\\
+So, $(1 + x)^{k+1} \ge 1 + (k+1)x$.\\
+\\
+Finally, through induction on $n$, $(1 + x)^n \ge 1 + nx$ for all non-negative $n$ and real numbers $x > -1$.
+\\
+\\
 %----------------------------------------------------------------------------------------
 %	PROBLEM 15
 %----------------------------------------------------------------------------------------
 \textbf{15.} For which non-negative integer values of \textit{n} is $n! \ge 3^n$? \\
+-- \\
+The proposition holds for $n = 0$ and integers which are greater than or equal to 7. \\
+When $n = 0$, $n! = 0! = 1$, also, $3^n = 3^0 = 1$. \\
+Clearly, $1 \ge 1$. \\
+
+Proof by Induction for $n \ge 7$. \\
+I) Base Case
+$n = 7$ \\
+$n! = 7! = 5040$ \\
+$3^n = 3^7 = 2187$ \\
+$ 5040 \ge 2187$ \\
+
+II) Inductive Step \\
+Suppose $P(k) \Rightarrow P(k + 1).$ \\
+$P(k): k! \ge 3^k$ for some integer $k \ge 7$. \\
+$P(k+1): (k+1)! \ge 3^{k+1}$ \\
+
+$3k! \ge 3 \cdot 3k$ \\
+$(k + 1)! = (k + 1)k!$ by our inductive definition. \\
+$(7 + 1)k! = 8k! \ge 3k! \ge 3 \cdot 3^k = 3^{k+1}$ \\
+Finally, by induction on $n$, $n! \ge 3^n$ for all integers $n \ge 7$.
+\\
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 16
@@ -59,6 +110,32 @@ for all non-negative integers n and real numbers $x > -1$. \\
 	\sum_{i=1}^{n} \frac{1}{i(i+1)} = \frac{n}{n+1}
 \end{align*}
 for all positive integers \textit{n}. \\
+--\\
+
+Proof by Induction \\
+
+I)Base Case \\
+
+For $n = 1$, \\
+$\sum_{i=1}^1 \frac{1}{i(i+1)} \ \frac{1}{1(1+1} = \frac{1}{2}$ 
+and, $\frac{n}{n+1} = \frac{1}{1+1} \frac{1}{2}$ \\
+
+Clearly, base case holds.\\
+
+II) Inductive Step \\
+Suppose $P(k) \Rightarrow P(k + 1)$. \\
+
+$P(k): \sum_{i=1}^{k} \frac{1}{i(i+1)} = \frac{k}{k+1}$ \\
+$P(k+1): \sum_{i=1}^{k+1} \frac{1}{i(i+1)} = \frac{k+1}{k+2}$ \\
+By the inductive definition and hypothesis, \\
+$\sum_{i=1}^{k+1} \dfrac{1}{i(i+1)} = \sum_{i=1}^{k}
+ \dfrac{1}{i(i+1)} + \dfrac{1}{(k+1)(k+2)}$ \\
+$= \dfrac{k}{k+1}+\dfrac{1}{(k+1)(k+2)}$ \\
+$= \dfrac{k^2 + 2k + 1}{(k+1)(k+2)}$ \\
+$= \dfrac{(k+1)^2}{(k+1)(k+2)}$ \\
+$= \dfrac{k+1}{k+2}$ \\
+
+Finally, by induction on $n$, $\sum_{i=1}^n \dfrac{1}{i(i+1)} = \dfrac{n}{n+1}$
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 17
@@ -68,6 +145,47 @@ for all positive integers \textit{n}. \\
 	a_1 &= 1, \\
 	a_{k+1} &= \frac{6a_k + 5}{a_k + 2}, \text{  for } k \text{ a positive integer.} \\
 \end{align*}
+-- \\
+(i) $a_n > 0$ \\
+I) Base Case \\
+
+For $n = 1$, \\
+$a_n = a_1 = 1 > 0$ \\
+Base case holds. \\
+
+II) Inductive Step\\
+
+Suppose $P(k) \Rightarrow P(k+1)$ \\
+$P(k): a_k > 0$ \\
+$P(k+1): a_{k+1} = \dfrac{6a_k + 5}{a_k + 2} > 0$.\\
+
+Using our inductive hypothesis, \\
+$a_k > 0 \rightarrow a_k + 2 > 0$ and $a_k > 0 \rightarrow 
+2a_k > a_k \rightarrow 6a_k > a_k \rightarrow 6a_k + 5 > a_k + 2 > 0.$. \\
+So, $\dfrac{6a_k + 5}{a_k + 2} > 1 > 0 \rightarrow \dfrac{6a_k + 5}{a_k + 2} > 0$. \\
+
+Finally, by induction on $n$, $a_n < 5$ for all positive integers $n$.
+
+(ii) $a_n < 5$. \\
+I) Base Case
+
+For $n = 1$, \\
+$a_n = a_1 = 1 < 5$. \\
+Base case holds.
+
+II) Inductive Step \\
+
+Suppose $P(k) \Rightarrow P(k+1)$.\\
+$P(k): a_k < 5$ \\
+$P(k+1): a_{k+1} = \dfrac{6a_k + 5}{a_k + 2} < 5$. \\
+
+Using our inductive hypothesis, \\
+$a_k < 5 \rightarrow 6a_k < 5a_k + 5 \rightarrow 6a_k + 5 < 5a_k + 10$ \\ 
+$= 5(a_k + 2) \rightarrow 6a_k + 5 < 5(a_k + 2)$.
+So, $\dfrac{6a_k + 5}{a_k + 2} < 5$.
+
+Finally, by induction on $n$, $a_n < 5$ for all positive integers $n$.
+\\
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 19
@@ -75,7 +193,38 @@ for all positive integers \textit{n}. \\
 \textbf{19.} Prove that 
 \begin{align*}
 	\prod_{i=1}^n (1 - \frac{1}{i^2}) = \frac{n + 1}{2n}
+\end{align*} \\
+for integers $n \ge 2$.\\
+-- \\
+
+I) Base Case \\
+
+For $n = 2$ \\
+$\prod\limits_{i=1}^2 (1 - \dfrac{1}{i^2}) = 1 - \dfrac{1}{2^2})$
+$= \dfrac{3}{4}$ \\ 
+
+$ \dfrac{n+1}{2n} = \dfrac{2+1}{2(2)} = \dfrac{3}{4} $.\\
+Base case holds. \\
+
+II) Inductive Step \\
+
+Suppose that $P(k) \Rightarrow P(k+1)$\\
+$P(k): \prod\limits_{i=1}^k (1 - \dfrac{1}{i^2}) = \dfrac{k + 1}{2k}$ \\
+$P(k+1): \prod\limits_{i=1}^{k+1} (1 - \dfrac{1}{i^2})
+ = \dfrac{(k+1) + 1}{2(k+1)} = \dfrac{k + 2}{2k + 2}$ \\
+
+\begin{align*}
+	\prod_{i=1}^{k+1} (1 - \frac{1}{i^2}) &=
+	[\prod_{i=1}^k (1- \dfrac{1}{i^2})] \cdot (1 - \dfrac{1}{(k+1)^2}) \\
+	&= \dfrac{k+1}{2k} \cdot (1 - \dfrac{1}{(k+1)^2}) \\
+	&= \dfrac{(k+1)[(k+1)^2 - 1]}{2k(k+1)^2} \\
+	&= \dfrac{(k+1)^2 - 1}{2k(k+1)} \\
+	&= \dfrac{k^2 + 2k}{2k(k+1)} \\
+	&= \dfrac{k(k+2)}{2k(k+1)} \\
+	&= \dfrac{k+2}{2k+2}
 \end{align*}
-for integers $n \ge 2$.
+
+Finally, by induction on n, $\prod\limits_{i=1}^n (1 - \frac{1}{i^2})
+= \frac{n + 1}{2n}$, for all integers $n \ge 2$.
 
 \end{document}
