@@ -1,6 +1,6 @@
 \documentclass[paper=letter, fontsize=11pt]{scrartcl} % Letter paper and 11pt font size
 
-\usepackage{amstext, amsmath, amssymb}
+\usepackage{amstext, amsmath, amssymb, cases}
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 \usepackage[english]{babel} % English language/hyphenation
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
@@ -41,17 +41,60 @@
 %----------------------------------------------------------------------------------------
 %	PROBLEM #14
 %----------------------------------------------------------------------------------------
+\textbf{14.} Define functions $f$ and $g$: $\mathbb{R} \rightarrow \mathbb{R}$ by $f(x) =
+x^2$ and $g(x) = x^2-1$. Find the functions $f \circ f$, $f \circ g$, $g \circ f$, $g
+\circ g$. \\
+List the elements of the set ${x \in \mathbb{R} | f(g(x)) = g(f(x))}$ \\
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM #16 (ii, iv, v, vi)
 %----------------------------------------------------------------------------------------
+\textbf{16.} Determine which of the following functions $f_i: \mathbb{R} \rightarrow
+\mathbb{R}$: are injective, which are surjective and which are bijective. Write down an
+inverse function of each of the bijections. \\
+
+\textbf{(ii)} $f_1(x) = x - 1$; \\
+\textbf{(iv)} $f_4(x) = x^3 - x$; \\
+\textbf{(v)} $f_5(x) = e^x$; \\
+\textbf{(vi)}
+\[f_6(x) = \left\{
+  \begin{array}{lr}
+    x^2 & \text{ if } x \ge 0\\
+    -x^2 & \text{ if } x \le 0
+  \end{array}
+\right.
+\]
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM #17
 %----------------------------------------------------------------------------------------
+\textbf{17.} Functions $f:\mathbb{R} \rightarrow \mathbb{R}$ and $g: \mathbb{R} \rightarrow
+\mathbb{R}$ are defined as follows. \\
+
+\begin{numcases}{f(x)=}
+    x + 2 & if $x < -1$,
+    \\
+    -x & if $-1 \le x \le 1$,
+    \\
+    x - 2 & if $x > 1$.
+\end{numcases}
+
+\begin{numcases}{g(x)=}
+    x - 2 & if $x < -1$,
+    \\
+    -x & if $-1 \le x \le 1$,
+    \\
+    x + 2 & if $x > 1$.
+\end{numcases}
+\\
+Find the functions $f \circ g$ and $g \circ f$. Is $g$ the inverse of the function $f$?
+Is $f$ injective or surjective? How about $g$? Sketch and compare the graphs of these functions.
+\\
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM #18
 %----------------------------------------------------------------------------------------
+\textbf{18.} Suppose that $f: X \rightarrow Y$ and $g: Y \rightarrow Z$ are surjections. Prove that the
+composite $g \circ f: X \rightarrow Z$ is a surjection.
 
 \end{document}
