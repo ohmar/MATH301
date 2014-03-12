@@ -1,6 +1,6 @@
 \documentclass[paper=letter, fontsize=11pt]{scrartcl} % Letter paper and 11pt font size
 
-\usepackage{amstext, amsmath, amssymb, cases}
+\usepackage{amstext, amsmath, amssymb, cases, graphicx}
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 \usepackage[english]{babel} % English language/hyphenation
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
@@ -136,12 +136,37 @@ Find the functions $f \circ g$ and $g \circ f$. Is $g$ the inverse of the functi
 Is $f$ injective or surjective? How about $g$? Sketch and compare the graphs of these functions.
 \\
 
+$f \circ g = I_\mathbb{R}$ \\
+\[g \circ f(x) = \left\{
+    \begin{array}{lr}
+	x & \text{ if } x < -3, \\
+	-x - 2 & \text{ if } -3 \le x < -1, \\
+	x if -1 & \text{ if } \le x \le 1, \\
+	2 - x & \text{ if } 1 < x \le 3, \\
+	x & \text{ if } x > 3.
+    \end{array}
+\right.
+\]
 
+$g$ is not the inverse function of $f$. We can see that $f(-2) = f(0) = f(2) = 0$.
+If $g$ were the inverse function of $f$, we would have $g(0) = -2, g(0) = 0, g(0) = 2.$
+Which is not possible since $g$ is single-valued. $f$ is not injective and therefore
+not invertible. \\
+$f$ is surjective but not injective, and $g$ is injective but not surjective. \\
+
+The graphs of $f(x)$ and $g(x)$ follow:
+
+\includegraphics[scale=0.5]{graphs.png}
+\\
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM #18
 %----------------------------------------------------------------------------------------
 \textbf{18.} Suppose that $f: X \rightarrow Y$ and $g: Y \rightarrow Z$ are surjections. Prove that the
-composite $g \circ f: X \rightarrow Z$ is a surjection.
+composite $g \circ f: X \rightarrow Z$ is a surjection. \\
+
+Let $z \in Z$. Since $g$ is a surjection, there exists a $y \in Y$ such that $g(y)=\mathbb{z}$.
+But $f$ is a surjection, then there exists an $x \in X$ such that $f(x) = y$. Therefore, 
+$(g \circ f)(x) = \mathbb{z}$, and $(g \circ f): X \rightarrow Z$ is then a surjection. \\
 
 \end{document}
