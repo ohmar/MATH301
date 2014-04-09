@@ -1,0 +1,108 @@
+\documentclass[paper=letter, fontsize=11pt]{scrartcl} % Letter paper and 11pt font size
+
+\usepackage{amstext, amsmath, amssymb}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+\setlength\parindent{0pt} % Remove all indentation from paragraps.
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{San Francisco State University} \\ [25pt]
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge MATH 301 Assignment 7  \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Omar Sandoval}
+
+\date{\normalsize\today}
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM #19
+%----------------------------------------------------------------------------------------
+\textbf{19.} Prove Leibniz's rule for higher order derivatives of products,
+\begin{align*}
+    \dfrac{d^n(uv)}{dx^n} = \sum_{i=0}^{n} \dbinom{n}{i} \dfrac{d^iu}{dx^i} \dfrac{d^{n-
+    i}v}{dx^{n-i}} \text{ for } n \in \mathbb{Z}^{+}
+\end{align*}
+by induction on $n$. \\
+\\
+
+Base Case: When $i = 0$. \\
+
+$\dfrac{d(uv)}{dx^k} = u \dfrac{dv}{dx} \dfrac{du}{dx}v$
+
+Inductive Step: $P(k) \Rightarrow P(k+1)$ \\ 
+Need to show: $P(k+1): \dfrac{d^{k+1}(uv)}{dx^{k+1}} = \sum\limits_{i=0}^{k+1} \dbinom{k+1}{i}
+\dfrac{d}{dx}\dfrac{d^iu}{dx^i}\dfrac{d^{k+1-i}v}{dx^{k+1-i}}$
+
+We can see that; $\dfrac{d^{k+1}(uv)}{dx^{k+1}} = \dfrac{d}{dx} \dfrac{d^k(uv)}{dx^k} =$
+$\sum\limits_{i=0}^{k}\dbinom{k}{i} \dfrac{d^{i+1}u}{dx^{i+1}}\dfrac{d^{k-i}v}{dx^{k-i}}$
+$+ \sum\limits_{i=0}^{k}\dbinom{k}{i} \dfrac{d^iu}{dx^i}\dfrac{d^{k+1-i}v}{dx^{k+1-i}}$.
+
+By replacing $i + 1$ with $i$ and $i$ with $i-1$, and extending our summation to $k+1$ we can get the following; \\
+
+
+$\sum\limits_{i=0}^{k}\dbinom{k}{i} \dfrac{d^{i+1}u}{dx^{i+1}}\dfrac{d^{k-i}v}{dx^{k-i}}$
+$ = \sum\limits_{i=0}^{k+1}\dbinom{k}{i-1} \dfrac{d^{i}u}{dx^{i}}\dfrac{d^{k+1-i}v}{dx^{k+1-i}}$ \\
+
+So,
+\begin{align*}
+    \dfrac{d^{k+1}(uv)}{dx^{k+1}} &= \sum_{i=1}^{k+1}\dbinom{k}{i-1} \dfrac{d^{i}u}
+    {dx^{i}}\dfrac{d^{k+1-i}v}{dx^{k+1-i}} + \sum\limits_{i=0}^{k+1}\dbinom{k}{i-1}
+    \dfrac{d^{i}u}{dx^{i}}\dfrac{d^{k+1-i}v}{dx^{k+1-i}} \\
+    &= \sum_{i=1}^{k}(\dbinom{k}{i-1}+\dbinom{k}{i})\dfrac{d^iu}{dx^i}\dfrac{d^{k+1-i}v}
+    {dx^{k+1-i}} + \dbinom{k}{k}\dfrac{d^{k+1}u}{dx^{k+1}} + \dbinom{k}{0}\dfrac{d^{k+1}v}{dx^{k+1}} \\
+    &= \sum_{i=0}^{k+1}\dbinom{k+1}{i}\dfrac{d^iu}{dx^i}\dfrac{d^{k+1-i}v}{dx^{k+1-i}}
+\end{align*}
+
+Since $\dbinom{k}{i-1} + \dbinom{k+1}{i}$ and $\dbinom{k}{k} = \dbinom{k+1}{k+1}$
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM #23
+%----------------------------------------------------------------------------------------
+\textbf{23.} Prove that there does not exist a rational number whose suqare is 10. \\
+\\
+
+Proof by Contradiction \\
+Suppose for contradiction that there does exist a rational number, $x$, whose square is 
+divisible by 10. Then, there exists integers $p$ and $q$ with no common divisors, so, 
+$x = \dfrac{p}{q}$ and $x^2 = 10$ \\
+
+So, $\dfrac{p^2}{q^2} = 10$, and $p^2 = 10q^2$ which tells us that $p$ is divisible by $10$
+. That is, there is an integer $a$ so that $p = 10a$. Hence, $10q^2 = p^2 = (10a)^2 = 
+100a^2$. So, $q^2 = 10a^2$ which means that $q$ is also divisible by 10, which is a 
+contradiction to our assumption. \\
+\\
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM #25
+%----------------------------------------------------------------------------------------
+\textbf{25.} Find the rational number equal to the recurring infinite decimal $2.10012\dot{0}9\dot{7}$. \\
+
+Let $x = 2.10012\dot{0}9\dot{7}$. Then $1000000x = 2100120.97\dot{0}9\dot{7}$ from which it follows that $999999x = 2100120.97 - 2.10012 = 2100118.87 = 210011887/100$. \\
+It follows
+that $x = 210011887/99999900$
+
+\end{document}
