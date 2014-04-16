@@ -26,7 +26,7 @@
 \normalfont \normalsize 
 \textsc{San Francisco State University} \\ [25pt]
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge MATH 301 Assignment 4  \\ % The assignment title
+\huge MATH 301 Assignment 8 \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
@@ -41,29 +41,123 @@
 %----------------------------------------------------------------------------------------
 %	PROBLEM #2
 %----------------------------------------------------------------------------------------
+\textbf{2.} Let $a$ be an integer. Prove that $a^2$ is divisible by 5 if and only if $a$ 
+is divisible by 5. \\
+
+We are given that $a \in \mathbb{Z}$ and $5$ divides $a^2$. We want to show that 5 will 
+divide $a$. \\
+Proof by Contradiction: Given that $a \in \mathbb{Z}$, 5 divides $a^2$, 5 does not divide
+$a$.
+If $a$ divides 5, $a = 5q$ and $a^2 = 25q^2 = 5(5q^2)$ is divisible by 5. \\
+For converse, suppose $a^2$ is divisible by 5 and for contradiction, that $a$ is not 
+divisible by 5. \\
+Then, by the division theorem, $a = 5q + 1$ or $a = 5q + 2$. \\
+But, $a = 5q+1 \Rightarrow a^2 = (5q+1)^2 = 25q^2 + 10q + 1 = 5(5q^2 + 2q + 1) - 1$. \\
+
+So, in either case the remainder is non-zero, thus, by the division theorem, $a^2$ is not
+divisible by 5, so we reach a contradiction. \\
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM #3
 %----------------------------------------------------------------------------------------
+\textbf{3.} Use the result of Question 2 to prove that there does not exist a rational nu
+mber whose square is 5. \\ 
+
+Suppose for contradiction there does exist a rational number $q$ such that $q^2 = 5$.
+We write $q$ as a fraction in lowest terms, $q = a/b$ so that $a$ and $b$ are integers 
+such that $(a,b) = 1$. Now, $q^2 = 5 \Rightarrow a^2/b^2 = 5 \Rightarrow a^2 = 5b^2 
+\Rightarrow a^2$ is divisible by 5. It follows that $a$ much be divisible by 5. \\
+Thus, $a = 5a_1^2 = b^2 \Rightarrow b^2$ is divisible by $5 \Rightarrow b$ is 
+divisible by 5 as above. \\
+Finally, 5 is a common factor of $a$ and $b$ so that $(a,b) \not= 1$. Thus, we reach 
+a contradiction to the choice we made for $a$ and $b$. \\
+So, there does not exist a rational number whose square is 5. \\
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM #6
 %----------------------------------------------------------------------------------------
+\textbf{6.} Use the Euclidean algorithm to find the greatest common divisors of (i) 165 
+and 252, (ii) 4284 and 3480. \\ 
 
+\textbf{(i)} 
+\begin{align*}
+    (252,165) &\\
+    252 &= 165(1) + 87 \\
+    165 &= 87(1) + 78 \\
+    87 &= 78(1) + 9 \\
+    78 &= 9(9) + 6 \\
+    9 &= 6(1) + 3 \\
+    6 &= 3(2) + 0 \\
+    gcd(252,165) &= 3
+\end{align*}
+
+\textbf{(ii)}
+\begin{align*}
+    (4284,3480) & \\
+    4284 &= 3480(1) + 804 \\
+    3480 &= 804(4) + 264 \\
+    804 &= 264(3) + 12 \\
+    264 &= 12(22) + 0 \\
+    gcd(4284,3480) &= 12
+\end{align*}
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM #7
 %----------------------------------------------------------------------------------------
+\textbf{7.} Let $u_n$ be the $n$th Fibonacci number (for the definition see Definition 5.
+4.2). Prove that the Euclidean algorithm takes precisely $n$ steps to prove that $gcd(u_{n
++1},u_n) = 1$ \\
 
+Proof by Induction \\
+Base Case: (n = 1), $F_1 = 1$ and $F_2 = 1$. Thus, $gcd(F_1,F_2) = gcd(1,1) = 1$ \\
+
+Inductive Step: Need to show that for all $k \ge 2$, if $gcd(u_k,u_{k-1}) = 1$, then 
+$gcd(u_{k+1},u_k)$. So suppose that $gcd(u_k,u_{k-1}) = 1$ for some integer $k \ge 2$.
+Need to prove that $gcd(u_{k},u_{k+1}) = 1$ \\
+\begin{align*}
+    gcd(u_k,u_{k+1}) &= gcd(\text{remainder}(u_{k+1},u_k),u_k) \\ 
+    &= gcd(\text{remainder}(u_{k-1} + u_k, u_k),u_k) \text{ By def of fibonacci numbers} \\
+    &= gcd(u_{k-1},u_k) \\
+    &= 1
+\end{align*}
+In the third step, we can observe that $u_{k-1} < u_k \Rightarrow \text{ remainder of } 
+u_{k-1}$ divided by $u_k$ is just $u_{k-1}$. Thus, by our inductive hypothesis, we can 
+conclude that $u_k$ and $u_{k-1}$ are relatively prime and thus our claim holds for $n=k$
+\\
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM #10
 %----------------------------------------------------------------------------------------
+\textbf{10.} In each case of Question 6 write the greatest common divison as an integral 
+linear combination of the two numbers. \\
 
+\textbf{(i)}
+\begin{align*}
+    3 &= 9(1) - 6(1) \\
+    &= 9(1) - 1(78(1) - 9(1)) \\
+    &= 9(1) + 78(-1) + 9(8) \\
+    &= 78(-1) + 9(9) \\
+    &= 78(-1) + 9(87(1)-78(1)) \\
+    &= 78(-1) + 87(9) + 78(-9) \\
+    &= 87(9) + 78(-10) \\
+    &= 87(9) - 10(165(1) - 87(1)) \\
+    &= 87(9) + 165(-10) + 87(10) \\
+    &= 165(-10) + 87(19) \\
+    &= 165(-10) + 19(252(1) - 165(1)) \\
+    &= 165(-10) + 252(19) + 165(-19) \\
+    &= 252(19) + 165(-29) \\
+\end{align*}
 
-%----------------------------------------------------------------------------------------
-%	PROBLEM #
-%----------------------------------------------------------------------------------------
+\textbf{(ii)}
+\begin{align*}
+    12 &= 804(1) - 264(3) \\
+    &= 804(1) - 3(3480(1) - 804(4)) \\
+    &= 804(1) + 3480(-3) + 804(12) \\
+    &= 3480(-3) + 804(13) \\
+    &= 3480(-3) + 13(4284(1) - 3480(1)) \\
+    &= 3480(-3) + 4284(13) + 3480(-13) \\
+    &= 4284(13) + 3480(-16)
+\end{align*}
 
 
 \end{document}
