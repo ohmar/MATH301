@@ -1,0 +1,130 @@
+\documentclass[paper=letter, fontsize=11pt]{scrartcl} % Letter paper and 11pt font size
+
+\usepackage{amstext, amsmath, amssymb}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+\setlength\parindent{0pt} % Remove all indentation from paragraps.
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{San Francisco State University} \\ [25pt]
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge MATH 301 Assignment 4  \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Omar Sandoval}
+
+\date{\normalsize\today}
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM #1
+%----------------------------------------------------------------------------------------
+\textbf{1.} Prove, for positive integers $n$, that 7 divides $6^n + 1$ if and only if $n$
+is odd.
+\\
+
+We can see that 7 divides $6^n + 1$ if and only if $6^n + 1 \equiv 0 \text{ mod } 7$.
+Since $6 \equiv (-1) \text{ mod } 7$, we get the following; $6^n + 1 \equiv (-1)^n + 1 \text{ mod } 7$.
+We see now that when $n$ is odd, $(-1)^n + 1 \equiv -1 + 1 \equiv 0 \text{ mod } 7$ and when $n$
+is even; $(-1)^n + 1 \text{ mod } 7 \equiv 2 \not\equiv 0 \text{ mod } 7$
+\\
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM #3
+%----------------------------------------------------------------------------------------
+\textbf{3.} Suppose that a positive integer is written in decimal notation as 
+$n=a_k a_{k-1} \dots a_2a_1a_0$ where $0 \le a_i \le 9$. Prove that $n$ is divisible by 
+9 if and only if the sum of its digits $a_k + a_{k-1} + \dots + (-1)^k a_k$ is divisible 
+by 11.
+\\
+
+We can check that both $n$ and the sum of it's digits are $\equiv \text{ mod } 9$. \\
+We can write $n$ as; $n = \sum_{i=10}^k a_i 10^i$.
+Since $10 \equiv 1 \text{ mod } 9$, it follows that $10^k \equiv 1 \text{ mod } 9$.
+Thus, $n \equiv 10^ka_k + 10^{k-1} a_{k-1} + \dots + 10^1 a_1 + a_0 \equiv a_k + \dots 
++ a_0 \text{ mod } 9$.
+\\
+Finally, we see that the sum of the digits is congruent to $n \text{ mod } 9$, sow the 
+sum of the digits is divisible by 9 if and only if $n$ is divisible by 9.
+\\
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM #4
+%----------------------------------------------------------------------------------------
+\textbf{4.} Suppose that a positive integer is written in decimal notation as 
+$n=a_k a_{k-1} \dots a_2a_1a_0$ where $0 \le a_i \le 9$. Prove that $n$ is divisible by 
+11 if and only if the sum of its digits $a_0 - a_1 + \dots + (-1)^ka_k$ is divisible 
+by 11.
+\\
+
+We can see that $10 \equiv -1 \text{ mod } 11$, we then have $10^k \equiv 1 \text{ mod } 11$
+if $k$ is even and $10^k \equiv -1 \text{ mod } 11$ if $k$ is odd.
+Thus, $n \equiv a_0 + 10^1 a_1 + \dots + 10^k a_k \equiv a_0 - a_1 + \dots + (-1)^k a_k 
+\text{ mod } 11$.
+Finally, we see that the sum of the digits is congruent to $n \text{ mod } 11$, so one is
+divisible by 11 if and only if the other is also divisible by 11.
+\\
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM #7
+%----------------------------------------------------------------------------------------
+\textbf{7.} What is the last digit of $2^{1000}$?
+\\
+We can rewrite this statement as; $2^1000$ modulo $10$, and, since $2^5 \equiv 2 mod 10$;
+We have the following;
+\begin{align*}
+    2^1000 &\equiv (2^5)^{200} \\
+    &\equiv 2^{200} \\
+    &\equiv (2^5)^{40} \\
+    &\equiv 2^{40} \\
+    &\equiv (2^5)^8 \\
+    &\equiv 2^8 \\
+    &\equiv 2^5 \times 2^3 \\
+    &\equiv 2 \times 2^3 \\
+    &\equiv 2^4 \\
+    &\equiv 6 \text{ mod } 10.
+\end{align*}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM #9
+%----------------------------------------------------------------------------------------
+\textbf{9.} Solve the following linear congruences; \\ 
+\textbf{(i)} $3x \equiv 15 \text{ mod } 18;$ \\
+\textbf{(ii)} $3x \equiv 16 \text{ mod } 18;$ \\
+\textbf{(iii)} $4x \equiv 16 \text{ mod } 18;$ \\
+\textbf{(iv)} $4x \equiv 14 \text{ mod } 18; $
+\\
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM #10
+%----------------------------------------------------------------------------------------
+\textbf{10.} Solve the following linear congruences; \\ 
+\textbf{(i)} $23x \equiv 16 \text{ mod } 107;$ \\
+\textbf{(ii)} $3x \equiv 16 \text{ mod } 18;$ \\
+\textbf{(iii)} $4x \equiv 16 \text{ mod } 18;$ \\
+\textbf{(iv)} $4x \equiv 14 \text{ mod } 18; $
+\\
+
+\end{document}

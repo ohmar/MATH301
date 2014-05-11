@@ -1,0 +1,73 @@
+\documentclass[paper=letter, fontsize=11pt]{scrartcl} % Letter paper and 11pt font size
+
+\usepackage{amstext, amsmath, amssymb}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+\setlength\parindent{0pt} % Remove all indentation from paragraps.
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{San Francisco State University} \\ [25pt]
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge MATH 301 Assignment 4  \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Omar Sandoval}
+
+\date{\normalsize\today}
+
+\begin{document}
+
+\maketitle
+
+%p. 296: 12, 13, 16 
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM #12
+%----------------------------------------------------------------------------------------
+\textbf{12.} Prove that if the polynomial equation $a_n x^n + \dots + a_1 x + a_0 = 0$
+(with integer coefficients) has a rational solution $x = r / s$ (in its lowest terms)
+then $r$ divides $a_0$ and $s$ divides $a_n$. \\
+Deduce that every rational solution of $x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0 = 0$
+is an integer. \\
+
+Hence, show that the equation $x^3 - 8x + a = 0$ has no rational solutions if
+$a \equiv \pm 1 \text{ mod } 5.$
+\\
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM #13
+%----------------------------------------------------------------------------------------
+\textbf{13.} Recall that, given a prime $p$, the order modulo $p$ of an integer
+$a \not\equiv 0 \text{ mod } p$ is the least positive integer $n$ such that 
+$a^n \equiv 1 \text{ mod } p$. Find the orders modulo $p$ of all the non-zero elements
+of $R_p$ for $p = 5$ and $p = 11$. \\
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM #16
+%----------------------------------------------------------------------------------------
+\textbf{16.} Find the remainders when \\
+\textbf{(i)} $29!$ is divided by 31, \\
+\textbf{(ii)} $18!$ is divided by 23, \\
+\textbf{(iii)} $18!$ is divided by 437.
+\\
+
+\end{document}
